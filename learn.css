@@ -1,0 +1,223 @@
+/* ---------------------------------------
+   MindForge Learn — Clean HackerRank Layout
+---------------------------------------- */
+
+:root {
+  --bg-1: #0d0f17;
+  --bg-2: #132033;
+  --card: #111a25;
+  --border: rgba(255,255,255,0.06);
+  --accent: #55b4ff;
+  --accent-soft: rgba(85,180,255,0.12);
+  --text: #e7f4ff;
+  --muted: #b5cfe7;
+}
+
+* { box-sizing: border-box; margin: 0; }
+body {
+  background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+  font-family: Inter, Arial, sans-serif;
+  color: var(--text);
+}
+
+/* Top bar */
+.learn-top {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+
+.learn-top h2 { font-size: 22px; }
+.back-btn {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+/* MAIN LAYOUT */
+.learn-main {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+}
+
+/* LEFT COLUMN — BIG */
+.left-col {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* RIGHT COLUMN — Small */
+.right-col {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Small boxes (stopwatch + errors) */
+.stopwatch-box,
+.error-box {
+  background: var(--card);
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.stopwatch-box h3,
+.error-box h3 {
+  margin-bottom: 6px;
+  color: var(--accent);
+}
+
+#stopwatch {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+#error-output {
+  font-size: 14px;
+  color: var(--muted);
+  white-space: pre-wrap;
+}
+
+/* Buttons */
+.primary {
+  background: var(--accent);
+  color: #001;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.secondary {
+  background: transparent;
+  color: var(--muted);
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+/* CODE EDITOR — BIG */
+.editor-wrap {
+  width: 100%;
+}
+
+#code-editor {
+  width: 100%;
+  height: 420px;
+  background: #0f1722;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+  color: var(--text);
+  font-size: 15px;
+  font-family: Consolas, monospace;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+  resize: vertical;
+}
+
+/* CUSTOM INPUT — big but less tall */
+.custom-input label {
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+#stdin {
+  width: 100%;
+  min-height: 110px;
+  padding: 12px;
+  background: #0f1822;
+  border-radius: 10px;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+/* RIGHT SIDE BOXES */
+.problem-meta,
+.testcases,
+.output-panel {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.case {
+  background: var(--accent-soft);
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.case-label {
+  font-weight: bold;
+  color: var(--accent);
+}
+
+#code-output {
+  min-height: 160px;
+  white-space: pre-wrap;
+  color: var(--muted);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .learn-main { flex-direction: column; }
+  .left-col, .right-col { width: 100%; }
+  #code-editor { height: 320px; }
+}
+/* Make timer + error small */
+.small-box {
+    width: 100%;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 14px;
+}
+
+/* Make code editor and input big */
+.large-box {
+    width: 100%;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+}
+
+/* Expand right side */
+.big-right {
+    width: 40%;
+}
+
+.left-col {
+    width: 60%;
+}
+
+/* Bigger editor */
+#code-editor {
+    height: 420px;
+    font-size: 15px;
+}
+
+/* Bigger input */
+#stdin {
+    min-height: 120px;
+}

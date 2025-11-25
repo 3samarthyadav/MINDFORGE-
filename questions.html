@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAgTiP8_jshNd5iOmypVxiqLpCedlObdg4",
+  authDomain: "mindforge-1979.firebaseapp.com",
+  projectId: "mindforge-1979",
+  storageBucket: "mindforge-1979.firebasestorage.app",
+  messagingSenderId: "280491326690",
+  appId: "1:280491326690:web:6eddbb68e43c32782472bb"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// --------------------------
+// PYTHON QUESTIONS
+// --------------------------
+const questions = {
+  q1: {
+    title: "Print Hello World",
+    description: "Write a program that prints 'Hello, World!'",
+    input: "No input",
+    output: "Hello, World!",
+    difficulty: "Easy"
+  },
+
+  q2: {
+    title: "Sum of Two Numbers",
+    description: "Given two integers, print their sum.",
+    input: "5 7",
+    output: "12",
+    difficulty: "Easy"
+  },
+
+  q3: {
+    title: "Even or Odd",
+    description: "Determine whether a number is even or odd.",
+    input: "11",
+    output: "Odd",
+    difficulty: "Easy"
+  },
+
+  q4: {
+    title: "Largest of Three",
+    description: "Print the largest of three numbers.",
+    input: "10 40 15",
+    output: "40",
+    difficulty: "Medium"
+  },
+
+  q5: {
+    title: "Palindrome Check",
+    description: "Check if a string is a palindrome.",
+    input: "level",
+    output: "Yes",
+    difficulty: "Medium"
+  },
+
+  q6: {
+    title: "Reverse a String",
+    description: "Reverse a given string.",
+    input: "hello",
+    output: "olleh",
+    difficulty: "Medium"
+  },
+
+  q7: {
+    title: "Factorial (Recursive)",
+    description: "Compute factorial of a number using recursion.",
+    input: "5",
+    output: "120",
+    difficulty: "Hard"
+  },
+
+  q8: {
+    title: "Fibonacci (Nth Term)",
+    description: "Return the Nth Fibonacci number.",
+    input: "10",
+    output: "55",
+    difficulty: "Hard"
+  }
+};
+
+// push questions into firestore
+async function insertQuestions() {
+  for (let id in questions) {
+    await setDoc(doc(db, "questions", id), questions[id]);
+    console.log("Inserted:", id);
+  }
+  alert("All questions inserted successfully!");
+}
+
+insertQuestions();
+
+</script>
+
+</body>
+</html>

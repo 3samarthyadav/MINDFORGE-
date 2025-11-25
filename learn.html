@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindForge | Learn</title>
+    <link rel="stylesheet" href="learn.css">
+</head>
+
+<body>
+
+<!-- 🔹 TOP BAR -->
+<div class="learn-top">
+    <div class="left">
+        <button class="back-btn" onclick="history.back()">← Back</button>
+        <h2>Learn</h2>
+    </div>
+</div>
+
+<div class="learn-main">
+
+    <!-- LEFT COLUMN -->
+    <div class="left-col">
+
+        <!-- STOPWATCH -->
+        <div class="stopwatch-box small-box">
+            <h3>⏱️ Time Spent</h3>
+            <div id="stopwatch">00:00:00</div>
+        </div>
+
+        <!-- ERRORS -->
+        <div class="error-box small-box">
+            <h3>⚠️ Errors</h3>
+            <div id="error-output">No errors yet.</div>
+        </div>
+
+        <!-- CODE EDITOR (BIGGER) -->
+       <div class="editor-wrap large-box">
+    <textarea id="code-editor" placeholder="# Write your code here"></textarea>
+    <div class="editor-actions" style="margin-top:10px;">
+        <button id="run-btn" class="primary">Run</button>
+        <button id="submit-btn" class="primary">Submit</button>
+    </div>
+</div>
+
+        <!-- CUSTOM INPUT (BIGGER) -->
+        <div class="custom-input large-box">
+            <label for="stdin">Custom Input (optional)</label>
+            <textarea id="stdin" placeholder="Custom input for run"></textarea>
+        </div>
+
+    </div>
+
+    <div class="right-col big-right">
+
+    <h2 id="question-title">Loading...</h2>
+
+    <div class="problem-meta">
+        <p id="question-desc">Loading description...</p>
+    </div>
+
+    <div class="io-block">
+        <h4>Input</h4>
+        <pre id="question-input">...</pre>
+
+        <h4>Output</h4>
+        <pre id="question-output">...</pre>
+    </div>
+
+    <div class="output-panel">
+        <h4>Your Output</h4>
+        <pre id="code-output">No runs yet.</pre>
+    </div>
+
+</div>
+
+</div>
+<script type="module" src="learn.js"></script>
+</body>
+</html>
